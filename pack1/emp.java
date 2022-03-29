@@ -18,7 +18,7 @@ public class emp {
             employee_id = sc.nextInt();
             System.out.print("Enter first name:");
             String first_name = sc.next(); //local variable
-            System.out.print("Enter last type:");
+            System.out.print("Enter last name:");
             String last_name = sc.next();
             System.out.print("Enter employee age:");
             int age = sc.nextInt();
