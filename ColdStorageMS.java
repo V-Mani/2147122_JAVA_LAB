@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.Scanner;
+import java.util.jar.Attributes.Name;
 
 public class ColdStorageMS {
 
@@ -18,7 +19,7 @@ public class ColdStorageMS {
         // obj1.displaySupplier();
         // obj2.displaySupplier();
 
-        Scanner input = new Scanner(System.in);
+       
     //     String ch;
     //     do{
     //     System.out.println("----------Cold Storage Management----------\n");
@@ -49,9 +50,13 @@ public class ColdStorageMS {
     //     }while(ch !="4");
     // }
 
-    payment obj = new payment(101,201,"online",32100,700,"04/04/2022");
-     
+    // payment obj = new payment(101,201,"online",32100,700,"04/04/2022");
 
+    // retailer obj2= new retailer("mani","trichy",987654321);
+    // System.out.println("\nReailer id>>> "+retailer.R_id+"\nReailer name>>> "+retailer.R_name+"\nLocation>>> "+retailer.R_address+"\nphone no>>> "+retailer.R_phno);
+    // retailer obj3= new retailer("ram","chennai",987654123);
+    // System.out.println("\nReailer id>>> "+retailer.R_id+"\nReailer name>>> "+retailer.R_name+"\nLocation>>> "+retailer.R_address+"\nphone no>>> "+retailer.R_phno);
+    
 }
 }
 
@@ -256,15 +261,41 @@ class supplier {
 
 
 class retailer {
-    int R_id;
-    String R_name,R_address;
-    long R_phno;
-    
+    static int R_id=0, R_phno;
+    static String R_name,R_address;
 
-    
+    Scanner input = new Scanner(System.in);
+    retailer(String name, String adr, int ph){
+        this.R_name=name;
+        this.R_address=adr;
+        this.R_phno=ph;
+        R_id++;
+    }
 }
 
-class warehouse {
+class warehouse extends retailer {
+    warehouse(String name, String adr, int ph) {
+        super(name, adr, ph);
+        //TODO Auto-generated constructor stub
+    }
+
+    static int WhId,storageCapacity;
+    static String WhName,WhLocation;
+    static{
+        WhId=901;
+        storageCapacity=10000;
+        WhName="ABC ColdStorage warehouse";
+        WhLocation="Karnataka";
+    }
+    Scanner input = new Scanner(System.in);
+
+    static void Whdisplay(){
+        System.out.println("\n###Warehouse Data entry###");
+        
+    }
+
+
+
     
 }
 
