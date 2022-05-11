@@ -1,6 +1,4 @@
 import java.util.*;
-import java.util.Scanner;
-import java.util.jar.Attributes.Name;
 
 public class ColdStorageMS {
 
@@ -50,13 +48,15 @@ public class ColdStorageMS {
     //     }while(ch !="4");
     // }
 
-    // payment obj = new payment(101,201,"online",32100,700,"04/04/2022");
+    //payment obj = new payment(101,201,"online",32100,700,"04/04/2022");
 
     // retailer obj2= new retailer("mani","trichy",987654321);
     // System.out.println("\nReailer id>>> "+retailer.R_id+"\nReailer name>>> "+retailer.R_name+"\nLocation>>> "+retailer.R_address+"\nphone no>>> "+retailer.R_phno);
     // retailer obj3= new retailer("ram","chennai",987654123);
     // System.out.println("\nReailer id>>> "+retailer.R_id+"\nReailer name>>> "+retailer.R_name+"\nLocation>>> "+retailer.R_address+"\nphone no>>> "+retailer.R_phno);
-    
+    // System.out.println("\nHello "+args[0]);
+    warehouse obj= new warehouse(null, null, WHCapacity);
+    obj.Whdisplay();
 }
 }
 
@@ -259,10 +259,9 @@ class supplier {
     }
 }
 
-
 class retailer {
-    static int R_id=0, R_phno;
-    static String R_name,R_address;
+     int R_id=0, R_phno;
+     String R_name,R_address;
 
     Scanner input = new Scanner(System.in);
     retailer(String name, String adr, int ph){
@@ -274,9 +273,9 @@ class retailer {
 }
 
 class warehouse extends retailer {
+
     warehouse(String name, String adr, int ph) {
         super(name, adr, ph);
-        //TODO Auto-generated constructor stub
     }
 
     static int WhId,storageCapacity;
@@ -289,14 +288,12 @@ class warehouse extends retailer {
     }
     Scanner input = new Scanner(System.in);
 
-    static void Whdisplay(){
+    void Whdisplay(){
         System.out.println("\n###Warehouse Data entry###");
+        System.out.println("\nWarehouse ID>> "+WhId+"\nStorage capacity>> "+storageCapacity+"\nName of the Warehouse>> "+WhName+"Location>> "+WhLocation);
+
         
     }
-
-
-
-    
 }
 
 class WHMaintanance {

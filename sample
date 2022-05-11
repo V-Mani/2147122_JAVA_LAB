@@ -1,0 +1,71 @@
+import java.util.*;
+
+public class JavaLab_07 {
+    public static void main(String arg[]) {
+        // Supplier obj = new Supplier();
+    }
+}
+
+
+class CsDetails{
+    int CsId=101;
+    String CsLocation = "Bengaluru";
+    int TotalAvailableSlot = 1000;
+    float avgtemp =23;
+    void ShowDetail(){
+        System.out.println("****************/Welcome to Mani Cold Storage/*******************");
+        System.out.println("\nCold Storage ID>>> "+ CsId);
+        System.out.println("\nCold Storage Location>>> "+ CsLocation);
+        System.out.println("\nTotal Availabe Slots>>> "+ TotalAvailableSlot);
+        System.out.println("\nAverage Teperature Maintained>>> "+ avgtemp);
+    }
+}
+
+class Supplier extends CsDetails{
+    // int S_id, qty, price;
+    // String PName,Ptype;
+    // int CurrentAvlSlots;
+    // float NewAvgTemp;
+
+    // Scanner input = new Scanner(System.in);
+    System.out.println("\nEnter Supplier id>>> ");
+    int S_id = input.nextInt();
+
+    // Supplier(int id, String ProductName, int p_qty, String p_type, int Exp_price){
+    //     this.S_id =id;
+    //     this.PName =ProductName;
+    //     this.qty=p_qty;
+    //     this.Ptype=p_type;
+    //     this.price=Exp_price;
+    // }
+
+    // void AddProduct(){
+    //     this.CurrentAvlSlots = TotalAvailableSlot-qty;
+    //     if(Ptype == "organic"){
+    //         this.NewAvgTemp = 22;
+    //     }
+    //     else if(Ptype == "medical"){
+    //         this.NewAvgTemp = 20;
+    //     }
+    //     else{
+    //         this.NewAvgTemp = 23;
+    //     }
+    // }
+    // void S_Display(){
+    //     System.out.println("\nSupplier Id>>> "+S_id);
+    //     System.out.println("\nProduct Name>>> "+PName);
+    //     System.out.println("\nProduct Quantity>>> "+qty);
+    //     System.out.println("\nProduct Type>>> "+Ptype);
+    //     System.out.println("\nProduct Price>>> "+price);
+    // }
+}
+// class retailer extends Supplier{
+//     retailer(int id, String ProductName, int p_qty, String p_type, int Exp_price) {
+//         super(id, ProductName, p_qty, p_type, Exp_price);
+//         //TODO Auto-generated constructor stub
+//     }
+
+//     void BuyProduct(){
+
+//     }
+// }
