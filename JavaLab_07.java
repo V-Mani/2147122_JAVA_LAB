@@ -2,9 +2,10 @@ import java.util.*;
 
 public class JavaLab_07 {
     public static void main(String arg[]) {
-        Supplier obj = new Supplier();
+        Receipt obj = new Receipt();
         obj.ShowDetail();
-        obj.diplay();
+        obj.SupplierDetail();
+        obj.bill();
     }
 }
 
@@ -27,25 +28,29 @@ class CsDetails{
 class Supplier extends CsDetails{
     int CurrentSlot;
     int NewAvgTemp;
+    String type1 ="organic";
+    String type2 ="medical";
+    static int S_id, P_qty;
+    static String S_Name, P_Name, P_type;
     Scanner in= new Scanner(System.in);
     void SupplierDetail(){
         System.out.println("\nEnter The Supplier Id>>> ");
-        int S_id = in.nextInt();
+        S_id = in.nextInt();
         System.out.println("Enter The Supplier Name>>> ");
-        String S_Name = in.nextLine();
+        S_Name = in.nextLine();
         S_Name = in.nextLine();
         System.out.println("Enter The Product Name>>> ");
-        String P_Name = in.nextLine();
+        P_Name = in.nextLine();
         System.out.println("Product Types> organic/medical/others ");
         System.out.println("Enter The Product Type>>> ");
-        String P_type = in.nextLine();
+        P_type = in.nextLine();
         System.out.println("Enter The Product Quantity>>> ");
-        int P_qty = in.nextInt();
+        P_qty = in.nextInt();
         CurrentSlot = TotalAvailableSlot - P_qty;
-        if(P_type == "organic"){
+        if(P_type.equals(type1)){
             this.NewAvgTemp = 22;
         }
-        else if(P_type == "medical"){
+        else if(P_type.equals(type2)){
             this.NewAvgTemp = 20;
         }
         else{
@@ -54,8 +59,15 @@ class Supplier extends CsDetails{
     }
 }
 
-class Receipt{
+class Receipt extends Supplier{
     void bill(){
-        System.out.println("");
+        System.out.println("\n\n############################");
+        System.out.println("Supplier Id ="+S_id);
+        System.out.println("Supplier Name = "+S_Name);
+        System.out.println("Product Name = "+P_Name);
+        System.out.println("Product Type = "+P_type);
+        System.out.println("Product Quantity = "+P_qty);
+        System.out.println("Current Slot Available = "+CurrentSlot);
+        System.out.println("Temperature maintained = "+NewAvgTemp);
     }
 }
